@@ -1,22 +1,11 @@
-using Microsoft.EntityFrameworkCore;
 using PizzaOrder.Data;
+using static PizzaOrder.AppBuilder;
 
-var builder = WebApplication.CreateBuilder(args);
+args.SetValue("PizzaOrderDB", args.Length);
 
-string PizzaOrderDB = "PizzaOrderDB";
+var app = AppBuilderSetup(args).Build();
 
-// Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddDbContext<PizzaDBContext>(
-    optionsAction: 
-        o => o.UseSqlServer(builder.Configuration.GetConnectionString(PizzaOrderDB)), 
-    contextLifetime:
-        ServiceLifetime.Singleton
-        );
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
+app.UseGraphQLAltair();
 
 app.Services.GetService<PizzaDBContext>()?.Seed();
 
@@ -28,6 +17,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseWebSockets();
 
 app.UseAuthorization();
 

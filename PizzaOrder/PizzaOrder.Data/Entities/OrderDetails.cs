@@ -1,9 +1,8 @@
-﻿using PizzaOrder.Data.Enum;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaOrder.Data.Entities;
-internal class OrderDetails
+public class OrderDetails
 {
     #region Fields
     [Key]
@@ -27,7 +26,7 @@ internal class OrderDetails
     public DateOnly Date { get; set; }
     [Required]
     [Column(TypeName = "int")]
-    public OrderStatus OrderStatus { get; set; }
+    public Enum.OrderStatus OrderStatus { get; set; }
     #endregion
 
     #region Ctor
@@ -36,7 +35,7 @@ internal class OrderDetails
         string addressLine2,
         string mobileNo,
         decimal amount,
-        OrderStatus orderStatus = OrderStatus.Created)
+        Enum.OrderStatus orderStatus = Enum.OrderStatus.Created)
     {
         AddressLine1 = addressLine1 ?? throw new ArgumentNullException(nameof(addressLine1));
         AddressLine2 = addressLine2 ?? throw new ArgumentNullException(nameof(addressLine2));

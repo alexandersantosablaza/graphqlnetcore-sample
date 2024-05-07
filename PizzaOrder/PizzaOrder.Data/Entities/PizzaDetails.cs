@@ -1,14 +1,8 @@
-﻿using PizzaOrder.Data.Enum;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzaOrder.Data.Entities;
-internal class PizzaDetails
+public class PizzaDetails
 {
     #region Fields
     [Key]
@@ -19,7 +13,7 @@ internal class PizzaDetails
     [Column(TypeName = "nvarchar(40)")]
     public string Name { get; set; }
     [Required]
-    public Toppings Toppings { get; set; }
+    public Enum.Toppings Toppings { get; set; }
     [Column(TypeName = "decimal(18,4)")]
     public decimal Price { get; set; }
     [Required]
@@ -36,7 +30,7 @@ internal class PizzaDetails
         decimal price,
         int size,
         int orderDetailsId,
-        Toppings toppings = Toppings.NONE
+        Enum.Toppings toppings = Enum.Toppings.NONE
         )
     {
         Name = name;

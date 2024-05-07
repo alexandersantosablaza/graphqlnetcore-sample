@@ -1,7 +1,7 @@
 ﻿namespace PizzaOrder.Data.Enum;
 
 [Flags]
-internal enum Toppings
+public enum Toppings
 {
     NONE            =   0
     , Pepperoni     =   1

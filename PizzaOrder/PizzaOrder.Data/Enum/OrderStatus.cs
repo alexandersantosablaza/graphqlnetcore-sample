@@ -1,6 +1,6 @@
 ﻿namespace PizzaOrder.Data.Enum;
 
-internal enum OrderStatus
+public enum OrderStatus
 {
     Created         =   1
     , InKitchen     =   2

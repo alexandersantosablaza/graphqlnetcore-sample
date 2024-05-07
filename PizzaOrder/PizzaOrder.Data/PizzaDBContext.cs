@@ -2,7 +2,7 @@
 using PizzaOrder.Data.Entities;
 
 namespace PizzaOrder.Data;
-internal class PizzaDBContext : DbContext
+public class PizzaDBContext : DbContext
 {
     public PizzaDBContext()
     {

@@ -1,7 +1,7 @@
 ﻿using PizzaOrder.Data.Entities;
 using PizzaOrder.Data.Enum;
 namespace PizzaOrder.Data;
-internal static class DataSeeder
+public static class DataSeeder
 {
     public static void Seed(this PizzaDBContext context)
     {
