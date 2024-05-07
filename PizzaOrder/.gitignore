@@ -1,3 +1,4 @@
 .vs
 PizzaOrder.API/obj/**
 PizzaOrder.API/bin/**
+PizzaOrder/PizzaOrder.API/obj
