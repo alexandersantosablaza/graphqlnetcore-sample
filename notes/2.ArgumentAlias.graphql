@@ -1,0 +1,12 @@
+query {
+	alias1:user(login:"valueArgument") {
+		id
+		name
+		url
+	}
+	alias2:user(login:"value") {
+		id
+		name
+		url
+	}
+}

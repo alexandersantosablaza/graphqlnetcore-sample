@@ -1,0 +1,25 @@
+Directives
+-> change query structure
+->attach to fields or fragents
+
+
+-@Include  - if true return
+-@Skip - if true not return
+
+query($loadStatus: Boolean!){
+	viewer {
+		id
+		name
+		url
+		bio @Skip(if: $loadStatus)
+		login
+		status @Include(if: $loadStatus) {
+			emoji
+			message
+		}
+	}
+}
+
+{
+	"loadStatus" : false
+}

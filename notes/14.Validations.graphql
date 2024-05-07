@@ -1,0 +1,15 @@
+
+if query has an invalid fields it will still able to check the errors of the graphql query
+
+validation perform before execution return the error details
+
+{
+	viewer {
+		id
+		name
+		iogdofigdofigd
+	}
+}
+
+error will be returned for this catching the error fields
+

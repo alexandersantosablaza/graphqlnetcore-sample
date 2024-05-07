@@ -1,0 +1,19 @@
+ {
+	 _type (name: "User") {
+		 name
+		 description
+		 interfaces {
+			 name
+		 }
+		 fields {
+			 name
+			 description
+			 type {
+				 name
+				 ofType {
+					 name
+				 }
+			 }
+		 }
+	 }
+ }

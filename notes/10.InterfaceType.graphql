@@ -1,0 +1,53 @@
+Interface to create interface
+
+interface BaseUser {
+	username: String
+	password: String
+}
+
+type User implements BaseUser {
+	mail: String
+}
+
+type BaseAdmin {
+	canManageUser: Boolean
+	canGenerateReport: Boolean
+}
+
+type Admin implements BaseUser &  BaseAdmin {
+	adminLevel: Integer
+}
+
+
+Union Types -- multiple kinds of object 
+-- may have different fields
+
+
+type Obj1 {
+	name: String
+}
+type Obj2 {
+	pass: String
+}
+
+union UnionObject = Obj1 | Obj2
+
+type UnionObjTypes {
+	combination: UnionObject
+}
+
+
+
+
+Execute query
+
+query {
+	combination {
+		... on Obj1 {
+			name
+		}
+		... on Obj2 {
+			pass
+		}
+	}
+}

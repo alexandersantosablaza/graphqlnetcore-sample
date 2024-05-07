@@ -1,0 +1,24 @@
+query ($LoginName: String = "ArgsValue") { 
+	user(login: $loginName)
+	 {
+		 id 
+		 name
+		 loc
+		 bio
+		 		 pagination-> repositories(last:3, before: "argumentursorValue", orderBy: { field: NAME direction: DESC }) {
+
+		 repositories(first:3, after: "argumentursorValue") {
+			 totalCount
+			 pageInfo {
+				 hasPreviousPage
+				 hasNextPage
+				 startCursor
+				 endCursor
+			 }
+			 edges {
+				 cursor
+				 node
+			 }
+		}
+	}
+}

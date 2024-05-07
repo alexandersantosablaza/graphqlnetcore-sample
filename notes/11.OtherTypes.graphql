@@ -1,0 +1,51 @@
+enum season {
+	SPRING
+	SUMMER
+	WINTER
+	AUTUMN
+}
+
+serialize as string
+useful in arguments
+scalar type
+
+
+enum gender {
+	MALE
+	FEMALE
+}
+
+
+
+InputObject Type
+
+input AdressDetails {
+	street: String
+	city: String
+	state: String
+	zipCode: String
+}
+
+
+
+
+List
+-wrapped in square brackets
+-same types
+-multple values
+
+
+
+type TravelDetails {
+	contiriesVisited: [ContryEnumType]
+	visitDetails: [VisitDetailsObject]
+}
+
+
+Non-null "!"
+
+type OrderDetails {
+	mail: String!
+	carts: [CartItems]!
+}
+

@@ -1,0 +1,26 @@
+
+{
+	_schema 
+	{
+		queryType
+		{
+			fields
+			{
+				name
+
+			}
+		}
+		mutationType
+		{
+			fields
+			{
+				name
+			}
+		}
+	}
+}
+
+__typename
+__schema
+__type()
+

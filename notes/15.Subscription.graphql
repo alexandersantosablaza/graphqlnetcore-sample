@@ -1,0 +1,20 @@
+{
+	subscription {
+		orderEvent {
+			id
+			name
+			orderId
+		}
+	}
+}
+
+subscription is on certain event
+
+
+mutation ($order:OrderInput!) {
+	createOrder(order: $order) {
+		id
+		name
+		status
+	}
+}

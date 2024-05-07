@@ -1,0 +1,12 @@
+query Fields{
+	viewer {
+		login
+	}
+}
+
+query <Name of Query> {
+	viewer {
+	
+	}
+
+}

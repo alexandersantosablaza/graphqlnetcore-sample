@@ -1,0 +1,55 @@
+Queries 
+Mutations
+Fields
+Types
+
+to use determine if query is valid
+Graphql Schema language
+
+{
+	viewer {
+		id
+		name
+		url
+
+	}
+}
+
+server specify the Schema 
+
+
+Types - basic component of graphql Schema
+send/receive
+
+
+Scalar Type
+Object Type
+
+
+Scalar Type - primitive value
+Integer
+Float
+String
+Boolean
+ID
+Date
+Time
+
+scalar Date
+
+
+Object Type - defined by the object
+
+type User {
+	id: ID
+	userName: String
+	mail: String
+	contactDetails: ContactDetails
+}
+
+
+type ContactDetails {
+	street: String
+	zip: String
+	phone: String
+}

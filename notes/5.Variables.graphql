@@ -1,0 +1,14 @@
+required parameter "!"
+$variable : TypeOfVariable!
+
+--query variables
+{
+"variable" : "value of variable"
+}
+
+query NameofQuery($variable: String!) {
+	user(login: $variable) {
+		id 
+		name
+	}
+}

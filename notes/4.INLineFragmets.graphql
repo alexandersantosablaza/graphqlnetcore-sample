@@ -1,0 +1,12 @@
+{
+	alex:user(login:"valuesArgs"){
+		...on TypeName {
+			login
+			url
+		}
+		... on someTypeName {
+			id 
+			name
+		}
+	}
+}

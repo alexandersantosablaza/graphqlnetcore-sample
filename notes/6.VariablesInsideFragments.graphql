@@ -1,0 +1,31 @@
+query ($loginName: String = "defautl val", $variableName: String!) {
+	user(login: $loginName) {
+		...userFields
+		...userFields2
+	}
+}
+
+fragment userFields on User {
+	id
+	name
+	bio
+	repository(name: "entityArgs") {
+		name
+		url
+	}
+}
+
+
+fragment userFields2 on User {
+	id
+	name
+	bio
+	repository(name: $variableName) {
+		name
+		url
+	}
+}
+
+{
+	$variableName: "asdasvValues"
+}
