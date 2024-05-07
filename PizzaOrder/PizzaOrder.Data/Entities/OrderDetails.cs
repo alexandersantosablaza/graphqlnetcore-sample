@@ -11,17 +11,22 @@ internal class OrderDetails
     public int Id { get; set; }
     [Required]
     [StringLength(40)]
+    [Column(TypeName = "nvarchar(40)")]
     public string AddressLine1 { get; set; }
     [Required]
     [StringLength(40)]
+    [Column(TypeName = "nvarchar(40)")]
     public string AddressLine2 { get; set; }
     [Required]
     [StringLength(10)]
-    public string MobileNo { get; set; }   
+    [Column(TypeName = "nvarchar(10)")]
+    public string MobileNo { get; set; }
+    [Column(TypeName = "decimal(18,4)")]
     public decimal Amount { get; set; }
     [Required]
     public DateOnly Date { get; set; }
     [Required]
+    [Column(TypeName = "int")]
     public OrderStatus OrderStatus { get; set; }
     #endregion
 

@@ -16,14 +16,18 @@ internal class PizzaDetails
     public int Id { get; set; }
     [Required]
     [StringLength(40)]
+    [Column(TypeName = "nvarchar(40)")]
     public string Name { get; set; }
     [Required]
-    public Toppings Toppings { get; set; } 
+    public Toppings Toppings { get; set; }
+    [Column(TypeName = "decimal(18,4)")]
     public decimal Price { get; set; }
     [Required]
     [MinLength(1)]
+    [Column(TypeName = "int")]
     public int Size { get; set; }
     [Required]
+    [Column(TypeName = "int")]
     public int OrderDetailsId { get; set; }
     #endregion
     #region ctor

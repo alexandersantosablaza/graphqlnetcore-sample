@@ -9,14 +9,16 @@ string PizzaOrderDB = "PizzaOrderDB";
 builder.Services.AddControllers();
 builder.Services.AddDbContext<PizzaDBContext>(
     optionsAction: 
-        o => o.UseSqlServer(
-            builder.Configuration.GetConnectionString(PizzaOrderDB)
-            )
+        o => o.UseSqlServer(builder.Configuration.GetConnectionString(PizzaOrderDB)), 
+    contextLifetime:
+        ServiceLifetime.Singleton
         );
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.Services.GetService<PizzaDBContext>()?.Seed();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
