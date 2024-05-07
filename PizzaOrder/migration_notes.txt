@@ -1,0 +1,7 @@
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add InitializeDatabase -s PizzaOrder.API -p PizzaOrder.Data -c PizzaDBContext
+
+dotnet ef database update -s PizzaOrder.API -p PizzaOrder.Data -c PizzaDBContext
+
+dotnet ef migrations remove -s PizzaOrder.API -p PizzaOrder.Data
