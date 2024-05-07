@@ -1,7 +1,5 @@
 .vs
-PizzaOrder/PizzaOrder.API/obj
-PizzaOrder/PizzaOrder.API/bin
-PizzaOrder/PizzaOrder.API/obj/Debug/net8.0
-PizzaOrder/PizzaOrder.API/obj/Release/net8.0
-PizzaOrder/PizzaOrder.Data/obj
-PizzaOrder/PizzaOrder.Data/bin
+**/**/obj/Debug/net8.0
+**/**/obj/Release/net8.0
+**/**/obj
+**/**/bin
