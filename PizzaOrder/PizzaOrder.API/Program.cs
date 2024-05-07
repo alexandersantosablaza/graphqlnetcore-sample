@@ -1,9 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using PizzaOrder.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+string PizzaOrderDB = "PizzaOrderDB";
 
+// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<PizzaDBContext>(
+    optionsAction: 
+        o => o.UseSqlServer(
+            builder.Configuration.GetConnectionString(PizzaOrderDB)
+            )
+        );
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
