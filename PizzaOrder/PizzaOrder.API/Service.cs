@@ -15,7 +15,7 @@ public static class AppBuilder
             optionsAction:
                 o =>
                 {
-                    o.UseSqlServer(builder.Configuration.GetConnectionString(args[args.Length - 1]));
+                    o.UseSqlServer(builder.Configuration.GetConnectionString(args[ ^1 ]));
                 },
             contextLifetime:
                 ServiceLifetime.Singleton

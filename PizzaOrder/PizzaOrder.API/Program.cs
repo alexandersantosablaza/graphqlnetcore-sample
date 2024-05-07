@@ -1,9 +1,7 @@
 using PizzaOrder.Data;
 using static PizzaOrder.AppBuilder;
 
-args.SetValue("PizzaOrderDB", args.Length);
-
-var app = AppBuilderSetup(args).Build();
+var app = AppBuilderSetup([.. args,"PizzaOrderDB"]).Build();
 
 app.UseGraphQLAltair();
 
